@@ -66,13 +66,13 @@
                                     <button class="btn btn-info"
                                             type="button"
                                             *ngIf="control.value.isValid"
-                                            (click)="control.value.isValid = false"><i class="fa fa-check"></i>
+                                            (click)="resetearRespuesta(false, ipreg, control)"><i class="fa fa-check"></i>
                                         Es la respuesta correcta
                                     </button>
                                     <button class="btn btn-success"
                                             type="button"
                                             *ngIf="!control.value.isValid"
-                                            (click)="control.value.isValid = true"><i class="fa fa-check"></i>
+                                            (click)="resetearRespuesta(true, ipreg, control)"><i class="fa fa-check"></i>
                                         Definir como verdadera
                                     </button>
                                 </td>
@@ -118,7 +118,3 @@
         </form>
     </div>
 </div>
-
-<pre>
-    {{ form.value | json }}
-</pre>

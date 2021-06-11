@@ -6,6 +6,17 @@
     <form (ngSubmit)="guardarUsuario(form)" #form="ngForm">
 
         <div class="form-group">
+            <label>Usuario ID</label>
+            <input  type="text"
+                    class="form-control"
+                    placeholder="Usuario ID"
+                    [(ngModel)]="usuario.id"
+                    name="id"
+                    disabled="disabled">
+            <small class="form-text text-muted">Este campo es autogenerado</small>
+        </div>
+
+        <div class="form-group">
             <label>Nombre</label>
             <input type="text"
                     class="form-control"

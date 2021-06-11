@@ -12,14 +12,12 @@ export class Pregunta {
 
 export class Cuestionario {
 
-    id: string = "";
+    id?: string;
     nombre: string = "";
-    creacion: Date;
+    creacion!: Date;
     instrucciones: string = "";
     preguntas: Array<Pregunta> = [];
 
-    constructor() {
-        this.creacion = new Date(Date.now());
-    }
+    constructor() { }
 
 }

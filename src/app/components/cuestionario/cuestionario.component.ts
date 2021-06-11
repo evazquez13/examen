@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
-import { Cuestionario, Respuesta, Pregunta } from '../../models/cuestionario.model'
+import { Cuestionario } from '../../models/cuestionario.model'
 
 @Component({
   selector: 'app-cuestionario',
@@ -80,6 +80,23 @@ export class CuestionarioComponent implements OnInit {
   borrarRespuesta(ipreg: number, ires: number) {
 
     this.respuestaArray(ipreg).removeAt(ires);
+
+  }
+
+  resetearRespuesta(opt: boolean, ipreg: number, control: any) {
+
+    if (opt) {
+
+      this.form.value.preguntas[ipreg].respuestas.forEach((res: { respuesta: string; isValid: boolean; }) => {
+
+        if (control.value.respuesta !== res.respuesta) {
+          res.isValid = false
+        } else {
+          res.isValid = true;
+        }
+
+      });
+    }
 
   }
 

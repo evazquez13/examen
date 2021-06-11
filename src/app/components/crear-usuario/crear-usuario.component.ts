@@ -33,7 +33,7 @@ export class CrearUsuarioComponent implements OnInit {
     }
 
     this.firbaseServer.crearUsuario(this.usuario).subscribe(res => {
-      console.log(res);
+      this.usuario = res;
     });
   }
 
