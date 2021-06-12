@@ -1,4 +1,29 @@
 <!-- <app-crear-usuario></app-crear-usuario> -->
 <br>
-<br>
-<app-cuestionario></app-cuestionario>
+<!-- <app-cuestionario></app-cuestionario> -->
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Privilegios</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let usuario of usuarios let i = index">
+                     <td> {{i}} </td>
+                     <td> {{usuario.nombre}} </td>
+                     <td> {{usuario.tipoUsuario}} </td>
+                     <td>
+                         <button class="btn btn-info text-white"><i class="fa fa-pen"></i></button>
+                     </td>
+                 </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

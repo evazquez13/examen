@@ -32,9 +32,18 @@ export class CrearUsuarioComponent implements OnInit {
       console.log("Formulario invalido");
     }
 
-    this.firbaseServer.crearUsuario(this.usuario).subscribe(res => {
-      this.usuario = res;
-    });
+    if (this.usuario.id) {
+
+      this.firbaseServer.actualizarUsuario(this.usuario).subscribe();
+
+    } else {
+
+      this.firbaseServer.crearUsuario(this.usuario).subscribe(res => {
+        this.usuario = res;
+      });
+
+    }
+
   }
 
 }

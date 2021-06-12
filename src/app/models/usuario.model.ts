@@ -1,6 +1,6 @@
 export class UsuarioModel {
 
-    id: string = "";
+    id?: string = "";
     nombre: string = "";
     tipoUsuario: string = "";
 
