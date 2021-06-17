@@ -34,7 +34,7 @@ export class CrearUsuarioComponent implements OnInit {
 
     if (this.usuario.id) {
 
-      this.firbaseServer.actualizarUsuario(this.usuario).subscribe();
+      this.firbaseServer.editarUsuario(this.usuario).subscribe();
 
     } else {
 

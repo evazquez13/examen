@@ -24,7 +24,7 @@ export class FirebaseService {
 
   }
 
-  actualizarUsuario(usuario: UsuarioModel) {
+  editarUsuario(usuario: UsuarioModel) {
 
     return this.http.put(`${this.url}/usuarios/${usuario.id}.json`, this.obtenerUsuarioTem(usuario))
 
@@ -70,13 +70,55 @@ export class FirebaseService {
 
   crearCuestionario(cuestionario: Cuestionario) {
 
+    return this.http.post(`${this.url}/cuestionario.json`, this.obtenerCuestionarioTem(cuestionario));
+
+  }
+
+  editarCuestionario(cuestionario: Cuestionario) {
+
+    return this.http.put(`${this.url}/cuestionario/${cuestionario.id}.json`, this.obtenerCuestionarioTem(cuestionario));
+
+  }
+
+  private obtenerCuestionarioTem(cuestionario: Cuestionario) {
+
     const cuestionarioTem: Cuestionario = {
       ...cuestionario
     }
 
     delete cuestionarioTem.id;
 
-    return this.http.post(`${this.url}/cuestionario.json`, cuestionario);
+    return cuestionarioTem;
+
+  }
+
+  obtenerCuestionarios() {
+
+    return this.http.get(`${this.url}/cuestionario.json`)
+      .pipe(
+        map(this.crearArrayCuestionarios)
+      );
+
+  }
+
+  crearArrayCuestionarios(cuestionariosRes: any) {
+
+    if (cuestionariosRes === null) { return []; }
+
+    const cuestionarios: Cuestionario[] = [];
+
+    Object.keys(cuestionariosRes).forEach(key => {
+      const cuestionario: Cuestionario = cuestionariosRes[key];
+      cuestionario.id = key;
+      cuestionarios.push(cuestionario);
+    });
+
+    return cuestionarios;
+  }
+
+  obtenerCuestionarioPorId(id: string) {
+
+    return this.http.get(`${this.url}/cuestionario/${id}.json`);
 
   }
 

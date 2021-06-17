@@ -3,6 +3,7 @@
 <!-- <app-cuestionario></app-cuestionario> -->
 
 <div class="row">
+    <h1>Usuarios Registrados</h1>
     <div class="col">
         <table class="table">
             <thead class="table-dark">
@@ -27,3 +28,31 @@
     </div>
 </div>
 
+
+<div class="row">
+    <h1>cuestionarios creados</h1>
+    <div class="col">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>id</th>
+                    <th>Nombre cuestionario</th>
+                    <th>Descripcion</th>
+                    <th>Fecha de cracion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let cuestionario of cuestionarios let i = index">
+                     <td> {{i}} </td>
+                     <td> {{cuestionario.nombre}} </td>
+                     <td> {{cuestionario.instrucciones}} </td>
+                     <td> {{cuestionario.creacion | date }} </td>
+                     <td>
+                         <button [routerLink]="['/presentarExamen', cuestionario.id]" class="btn btn-info text-white">Presentar Examen</button>
+                     </td>
+                 </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
