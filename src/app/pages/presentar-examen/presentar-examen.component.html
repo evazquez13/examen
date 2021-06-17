@@ -1,0 +1,20 @@
+<h1>Tiempo para examen</h1>
+
+<p> {{ horas }} {{ minutos }} {{ segundos }} </p>
+
+<h2> {{ cuestionario.nombre }} </h2>
+<p> {{cuestionario.instrucciones}} </p>
+
+<div *ngFor="let pregunta of cuestionario.preguntas">
+
+    <label> {{pregunta.pregunta}} </label>
+    <div *ngFor="let res of pregunta.respuestas">
+        <input type="radio"
+                [value]="res.isValid">
+        <p> {{res.respuesta}}  </p>
+    </div>
+    
+
+</div>
+
+

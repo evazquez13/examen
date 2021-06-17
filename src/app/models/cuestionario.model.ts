@@ -1,6 +1,6 @@
 export class Respuesta {
 
-    descripcion: string = '';
+    respuesta: string = '';
     isValid: boolean = false;
 
 }
