@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { CuestionarioComponent } from './components/cuestionario/cuestionario.component';
 import { PresentarExamenComponent } from './pages/presentar-examen/presentar-examen.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './common/angular-material/angular-material.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PresentarExamenComponent } from './pages/presentar-examen/presentar-exa
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
