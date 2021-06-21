@@ -10,7 +10,11 @@ import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.
 import { CuestionarioComponent } from './components/cuestionario/cuestionario.component';
 import { PresentarExamenComponent } from './pages/presentar-examen/presentar-examen.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularMaterialModule } from './common/angular-material/angular-material.module';
+import { AngularMaterialModule } from './common/modules/angular-material/angular-material.module';
+import { LoginComponent } from './components/login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { RegisterComponent } from './components/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +23,9 @@ import { AngularMaterialModule } from './common/angular-material/angular-materia
     CrearUsuarioComponent,
     CuestionarioComponent,
     PresentarExamenComponent,
+    LoginComponent,
+    HeaderComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,7 @@ import { AngularMaterialModule } from './common/angular-material/angular-materia
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

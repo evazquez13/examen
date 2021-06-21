@@ -1,0 +1,40 @@
+<div class="register-container">
+    <div class="register-user">
+        <img src="./assets/images/register-page.png" alt="" width="50%">
+    </div>
+    <form class="example-form"
+        (ngSubmit)="onSubmit( registerForm )"
+        #registerForm="ngForm">
+        <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input type="text"
+                autocomplete="off"
+                placeholder=""
+                name="name"
+                required
+                matInput
+                [(ngModel)]="usuario.nombre">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Usuario</mat-label>
+            <input type="email"
+                autocomplete="off"
+                placeholder=""
+                name="email"
+                required
+                matInput
+                [(ngModel)]="usuario.email">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password"
+                autocomplete="off"
+                placeholder=""
+                name="password"
+                required
+                matInput
+                [(ngModel)]="usuario.password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="register-button-primary">Registrar</button>
+    </form>
+</div>

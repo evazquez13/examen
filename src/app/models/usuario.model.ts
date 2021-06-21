@@ -5,3 +5,11 @@ export class UsuarioModel {
     tipoUsuario: string = "";
 
 }
+
+export class AuthUsuario {
+
+    email: string = "";
+    password: string = "";
+    nombre: string = "";
+
+}
